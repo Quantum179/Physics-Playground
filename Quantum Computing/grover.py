@@ -11,6 +11,14 @@ q = QuantumRegister(4, 'q')
 tmp = QuantumRegister(1, 'tmp')
 res = ClassicalRegister(4, 'res')
 
+s = 14 # 1110
+
+oracle = QuantumCircuit(q, tmp, res)
+
+for i in range(len(q)):
+  if (s & (1 << i)):
+    oracle.cx(q[i], tmp[0])
+
 print(oracle.qasm())
 
 qc = QuantumCircuit(q, tmp, res)
