@@ -13,6 +13,16 @@ res = ClassicalRegister(4, 'res')
 
 print(oracle.qasm())
 
+qc = QuantumCircuit(q, tmp, res)
+
+qc.x(tmp[0])
+qc.h(q)
+qc.h(tmp)
+qc += oracle
+qc.h(q)
+qc.h(tmp)
+qc.measure(q, res)
+
 # %matplotlib inline
 qc.draw(output='mpl')
 
