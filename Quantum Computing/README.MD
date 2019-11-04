@@ -8,3 +8,4 @@
 - Qiskit
 
 ## Liens
+- Quantum Machine Learning example : https://pennylane.ai/qml/app/tutorial_vqls.html
